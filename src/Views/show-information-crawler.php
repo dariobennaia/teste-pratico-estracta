@@ -20,7 +20,7 @@
                 <a href="http://www.guiatrabalhista.com.br/guia/salario_minimo.htm" target="_blank">Guia trabalhista</a>
                 usando <b>Crawler</b> e exibir suas informações com base nos requisitos do teste.
             </p>
-            <p>Caso deseje a informação com o formato JSON <a href="/json" target="_blank">clique aki</a>.</p>
+            <p>Caso deseje a informação com o formato JSON <a href="/json" target="_blank">clique aqui</a>.</p>
         </div>
     </div>
 
