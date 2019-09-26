@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  composer:
+    image: composer
+    command: install
+    volumes:
+      - ".:/app"
+
+  tests:
+    image: php:7
+    depends_on:
+      - composer
+    command: /app/vendor/bin/phpunit /app/tests
+    volumes:
+      - ".:/app"
+
+  webserver:
+    image: php:7
+    container_name: webserver-dario
+    depends_on:
+      - tests
+    command: php -S 0.0.0.0:80 /app/index.php
+    ports:
+      - "8001:80"
+    volumes:
+      - ".:/app"
