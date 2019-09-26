@@ -3,12 +3,14 @@ version: '3'
 services:
   composer:
     image: composer
+    container_name: composer-dario
     command: install
     volumes:
       - ".:/app"
 
   tests:
     image: php:7
+    container_name: teste-php-dario
     depends_on:
       - composer
     command: /app/vendor/bin/phpunit /app/tests
