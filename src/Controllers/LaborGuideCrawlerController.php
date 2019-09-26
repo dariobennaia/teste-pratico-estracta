@@ -8,6 +8,7 @@
 
 namespace Src\Controllers;
 
+use Src\Helpers\TemplateHelper;
 use Src\Services\LaborGuideCrawlerService;
 
 /**
@@ -31,9 +32,18 @@ class LaborGuideCrawlerController
     }
 
     /**
-     * @return false|string
+     * @return string
      */
     public function index()
+    {
+        $data = $this->laborGuideCrawlerService->getNominalsWagesValues();
+        return TemplateHelper::view('show-information-crawler', $data);
+    }
+
+    /**
+     * @return false|string
+     */
+    public function show()
     {
         return json_encode($this->laborGuideCrawlerService->getNominalsWagesValues());
     }

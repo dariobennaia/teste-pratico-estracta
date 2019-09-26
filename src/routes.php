@@ -12,5 +12,6 @@ use \PlugRoute\Http\RequestCreator;
 $route = new PlugRoute(new RouteContainer(), RequestCreator::create());
 
 $route->get('/', 'Src\Controllers\LaborGuideCrawlerController@index');
+$route->get('/json', 'Src\Controllers\LaborGuideCrawlerController@show');
 
 $route->on();
